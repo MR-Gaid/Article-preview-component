@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "manrope", sans-serif;
+    font-size: 0.813rem;
+    background-color: #ecf2f8;
+}
+
+/* Main container */
+.container {
+    width: 80%;
+    max-width: 20rem;
+    margin: 5em auto;
+    border-radius: 1em;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+
+}
+
+/*  left site */
+.left-site img {
+    width: 100%;
+}
+
+/* right site */
+.right-site {
+    padding: 1em 2em;
+}
+
+/* content title */
+.content h1 {
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    color: #48556a;
+    margin-block-end: 1em;
+}
+
+/* content text */
+.content p {
+    font-size: clamp(0.8rem, 3vw, 0.7rem);
+    font-weight: 500;
+    color: #6d7f97;
+    margin-block-end: 2em;
+}
+
+/* profile */
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* profile details  */
+.profile-detials {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* profile details imges */
+.profile-detials img {
+    width: 20%;
+    border-radius: 50%;
+}
+
+/* name  */
+.info h2 {
+    font-size: clamp(0.7rem, 3vw, 0.8rem);
+}
+
+/* Date */
+.info span {
+    font-size: clamp(0.1rem, 3vw, 0.7rem);
+    color: #9eafc2;
+}
+
+/* share icon */
+.shaer-icon {
+    border-radius: 50%;
+    padding: 0.5em;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.shaer-icon img {
+    width: 100%;
+}
+
+/* social links */
+.social-links {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1.5em 2em;
+    background-color: #48556a;
+    position: absolute; 
+    overflow: hidden;
+    width: 100%;
+    bottom: -8; 
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: bottom 0.3s ease-in-out;
+}
+
+.d-flex {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.d-flex span {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #9eafc2;
+    font-weight: 700;
+}
+
+/* Links */
+.links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1em;
+    align-items: center;
+}
+
+footer {
+    font-size: clamp(0.5rem, 3vw, 0.7rem);
+    text-align: center;
+    margin-block-end: 1em;
+}
+/* It is a class to appear the social links */
+.active {
+    bottom: 0;
+}
+
+/* It is a class to change the background color of the share button */
+.share-active {
+    background-color: #6e8098;
+}
+
+/* It is a class to filter the img of the shear button */
+.share-active-img img {
+    filter: brightness(10);
+}
+
+/* Media query */
+@media (min-width: 600px){
+    main {
+        margin: 20em auto;
+    }
+
+    /* Main container */
+    .container {
+        display: flex;
+        max-width: 650px;
+        overflow:visible;
+    }
+    
+    .left-site {
+        flex-basis: 40%;
+    }
+
+    .left-site img {
+        height: 100%;
+    }
+
+    .right-site {
+        flex-basis: 60%;
+    }
+
+    .social-links {
+        text-align: center;
+        width: 13.5rem;
+        bottom: 4.5rem;
+        right: -4rem;
+        position: absolute;
+        border-radius: 0.5rem;
+        padding: 0.8em 1.9em;
+        transform: scale(0);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* It is a class to appear the social links  */
+    .active {
+        transform: scale(1);
+    }
+
+    /* It is a small triangle appear under the social links */
+    .inverted-triangle {
+        --width: 23px;
+        width: 0;
+        height: 0;
+        border-left: var(--width) solid transparent;
+        border-right: var(--width) solid transparent;
+        border-top: var(--width) solid #48556a;
+        position: absolute;
+        left: 93.5%;
+        transform: translate(-50%) scale(0);
+        bottom: 4rem;
+        z-index: 2;
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    /* To hide the triangle and make it appear. */
+    .acticeTriangle {
+        transform: translate(-50%) scale(1);
+    }
+
+}
